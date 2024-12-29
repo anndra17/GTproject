@@ -1,6 +1,6 @@
-package com.example.spring_boot.service;
+package com.example.serving_web_content.service;
 
-import com.example.spring_boot.model.User;
+import com.example.serving_web_content.model.User;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

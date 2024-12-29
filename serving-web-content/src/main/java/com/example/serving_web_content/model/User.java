@@ -1,4 +1,4 @@
-package com.example.spring_boot.model;
+package com.example.serving_web_content.model;
 
 public class User {
     private String username;

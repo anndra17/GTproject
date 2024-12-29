@@ -1,13 +1,8 @@
-package com.example.spring_boot.model;
-
-import jakarta.persistence.*;
+package com.example.serving_web_content.model;
 
 import java.time.LocalDate;
 
-@Entity
 public class Post {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
@@ -15,10 +10,8 @@ public class Post {
     private String domain;
     private String ageTarget;
 
-    @Column(updatable = false)
     private LocalDate publishedDate;
 
-    @PrePersist
     public void onCreate() {
         this.publishedDate = LocalDate.now();
     }
