@@ -20,10 +20,17 @@ public class UserService {
         user2.setUsername("user");
         user2.setPassword("123");
 
+
         users.add(user1);
         users.add(user2);
     }
 
+    public void addUser(String username, String password) {
+        User newUser = new User();
+        newUser.setUsername(username);
+        newUser.setPassword(password);
+        users.add(newUser);
+    }
     public List<User> getAllUsers() {
         return users;
     }
