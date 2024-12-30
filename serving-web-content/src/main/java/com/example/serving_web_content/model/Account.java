@@ -1,6 +1,13 @@
 package com.example.serving_web_content.model;
 
-public class User {
+import jakarta.persistence.*;
+
+@Entity
+public class Account {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long accountId;
     private String username;
     private String password;
 

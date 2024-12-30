@@ -1,6 +1,6 @@
 package com.example.serving_web_content.controller;
 
-import com.example.serving_web_content.model.User;
+import com.example.serving_web_content.model.Account;
 import com.example.serving_web_content.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,9 +28,9 @@ public class LoginController {
 
     @PostMapping("/login")
     public String login(@RequestParam String username, @RequestParam String password, Model model) {
-        User user = userService.getUserByUsername(username);
+        Account account = userService.getUserByUsername(username);
 
-        if (user != null && user.getPassword().equals(password)) {
+        if (account != null && account.getPassword().equals(password)) {
             model.addAttribute("username", username);
             return "posts";  // pagina de succes dupa login
         } else {

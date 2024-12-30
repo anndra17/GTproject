@@ -16,7 +16,7 @@ public class SignUpController {
     // Pagina de Sign Up (Înregistrare)
     @GetMapping("/signup")
     public String signUpForm() {
-        return "signup"; // se redă formularul de signup
+        return "signup";
     }
 
     // Procesarea formularului de Sign Up
