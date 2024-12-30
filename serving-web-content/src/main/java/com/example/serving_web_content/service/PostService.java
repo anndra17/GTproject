@@ -29,5 +29,8 @@ public class PostService {
         return postRepository.findAll(Sort.by(Sort.Direction.DESC, "publishedDate"));
     };
 
+    public void deletePost(Long id) {
+        postRepository.deleteById(id);
+    }
 
 }
