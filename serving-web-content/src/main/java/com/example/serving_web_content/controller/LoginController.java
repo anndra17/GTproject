@@ -32,10 +32,10 @@ public class LoginController {
 
         if (account != null && account.getPassword().equals(password)) {
             model.addAttribute("username", username);
-            return "posts";  // pagina de succes dupa login
+            return "posts";
         } else {
             model.addAttribute("error", "Invalid username or password");
-            return "login";  // se revine la formularul de login
+            return "login";
         }
     }
 }

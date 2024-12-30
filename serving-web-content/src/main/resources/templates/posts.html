@@ -5,16 +5,24 @@
     <title>Postări</title>
 </head>
 <body>
+    <a href="/login">
+        <button style="color: wheat; background-color: darkred"> Logout </button>
+    </a>
     <h1 class="title" style="text-align: center">Postări</h1>
     <div class="posts-div">
         <div class="add-post-div" style="text-align: center">
-            <button>New post</button>
+            <a href="/add-post">
+                <button>New Post</button>
+            </a>
         </div>
-        <div class="show-post" style="text-align: center">
-            <h3 class="post-title"></h3>
-            <div class="post-details">age & domain</div>
+        <div class="show-post" th:each="post : ${posts}">
+            <h3 th:text="${post.title}"></h3>
+            <div class="post-details">
+                <span th:text="${post.ageTarget}"></span> |
+                <span th:text="${post.domain}"></span>
+            </div>
         </div>
-
     </div>
+
 </body>
 </html>

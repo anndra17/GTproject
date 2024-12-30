@@ -1,15 +1,22 @@
 package com.example.serving_web_content.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.time.LocalDate;
 
+@Entity
 public class Post {
-    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long postId;
 
     private String title;
     private String content;
     private String domain;
     private String ageTarget;
-
     private LocalDate publishedDate;
 
     public void onCreate() {
@@ -18,11 +25,11 @@ public class Post {
 
     // Getters and setters
     public Long getId() {
-        return id;
+        return postId;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.postId = id;
     }
 
     public String getTitle() {
