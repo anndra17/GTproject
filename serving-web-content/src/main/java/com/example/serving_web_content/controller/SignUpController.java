@@ -1,6 +1,6 @@
 package com.example.serving_web_content.controller;
 
-import com.example.serving_web_content.service.UserService;
+import com.example.serving_web_content.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class SignUpController {
 
     @Autowired
-    private UserService userService;
+    private AccountService accountService;
 
     // Pagina de Sign Up (Înregistrare)
     @GetMapping("/signup")
@@ -22,7 +22,7 @@ public class SignUpController {
     // Procesarea formularului de Sign Up
     @PostMapping("/signup")
     public String signUp(@RequestParam String username, @RequestParam String password) {
-        userService.addUser(username, password); // Adăugăm noul utilizator
+        accountService.addUser(username, password); // Adăugăm noul utilizator
         return "redirect:/login"; // După înregistrare, redirecționăm către pagina de login
     }
 }

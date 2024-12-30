@@ -1,7 +1,7 @@
 package com.example.serving_web_content.controller;
 
 import com.example.serving_web_content.model.Account;
-import com.example.serving_web_content.service.UserService;
+import com.example.serving_web_content.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class LoginController {
 
     @Autowired
-    private UserService userService;
+    private AccountService accountService;
 
     @GetMapping("/")
     public String home() {
@@ -28,7 +28,7 @@ public class LoginController {
 
     @PostMapping("/login")
     public String login(@RequestParam String username, @RequestParam String password, Model model) {
-        Account account = userService.getUserByUsername(username);
+        Account account = accountService.getUserByUsername(username);
 
         if (account != null && account.getPassword().equals(password)) {
             model.addAttribute("username", username);
