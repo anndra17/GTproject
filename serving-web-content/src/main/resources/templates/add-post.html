@@ -5,7 +5,7 @@
     <title>Adaugă Postare</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
 </head>
-<body>
+<body style="background-color: antiquewhite">
 <div class="container mt-5">
     <h1 class="text-center">Adaugă o nouă postare</h1>
     <form th:action="@{/add-post}" method="post" class="mt-4">
@@ -35,7 +35,7 @@
 
         <!-- Buton de trimitere -->
         <div class="d-grid">
-            <button type="submit" class="btn btn-primary">Adaugă Postare</button>
+            <button class="btn btn-info" style="background-color: burlywood; border-color: black" type="submit">Adaugă Postare</button>
         </div>
     </form>
 </div>
